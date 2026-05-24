@@ -43,6 +43,13 @@ else
     exit 1
 fi
 
+log "Seeding division user accounts..."
+if python create_division_users.py 2>&1; then
+    log "Division users seeded successfully"
+else
+    warn "Failed to seed division users; continuing startup"
+fi
+
 # Verify gunicorn is available
 log "Checking Gunicorn installation..."
 if ! python -m gunicorn --version &>/dev/null; then

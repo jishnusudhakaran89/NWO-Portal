@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'import_export',
     
     # Local apps
-    'inventory',
+    'inventory.apps.InventoryConfig',
 ]
 
 # Conditionally add GIS apps if GDAL is available (mostly for Docker/Linux)
@@ -173,3 +173,9 @@ LEAFLET_CONFIG = {
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
+
+# Use case-insensitive authentication for username and optionally email
+AUTHENTICATION_BACKENDS = [
+    'inventory.auth_backends.CaseInsensitiveModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]

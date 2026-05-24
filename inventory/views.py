@@ -60,20 +60,11 @@ class TEContextMixin:
         return initial
 
 
+from .defaults import DEFAULT_PASSWORDS
+
+
 def _get_division_default_password(division_name):
-    defaults = {
-        'NWO CENTRAL': 'Nwo@Central@2026!',
-        'NWO PALARIVATTOM': 'Nwo@Palarivattom@2026!',
-        'NWO KOCHI': 'Nwo@Kochi2026!',
-        'NWO TRIPUNITHARA': 'Nwo@Tripunithura@2026!',
-        'NWO ANGAMALY': 'Nwo@Angamaly@2026!',
-        'NWO THODUPUZHA': 'Nwo@Thodupuzha@2026!',
-        'NWO ALUVA': 'Nwo@Aluva@2026!',
-        'NWO MOOVATTUPUZHA': 'Nwo@Moovattupuzha@2026!',
-        'NWO ADIMALY': 'Nwo@Adimaly@2026!',
-        'NWO KATTAPPANA': 'Nwo@Kattappana@2026!',
-    }
-    return defaults.get(division_name)
+    return DEFAULT_PASSWORDS.get(division_name)
 
 
 @login_required

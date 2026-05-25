@@ -225,6 +225,7 @@ KeyError: 'DATABASE_URL'
 
 | Problem | Fix |
 |---------|-----|
+| "Invalid credentials on login" | Run `python manage.py fix_user_passwords` on deployed instance |
 | "App sleeping" | Free tier spins down after 15 min. Make a request to wake it up |
 | "Build timeout" | Reduce workers in gunicorn config or upgrade plan |
 | "Out of memory" | Free tier has 0.5 GB. Optimize queries or upgrade |
